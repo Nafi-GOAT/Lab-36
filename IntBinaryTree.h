@@ -29,15 +29,15 @@ private:
 
 public:
    // Constructor initializes the root to nullptr, indicating an empty tree.
-   IntBinaryTree()     { root = nullptr; }
+   IntBinaryTree() : root (nullptr) {}
 
    // Destructor deallocates all nodes in the tree.
    ~IntBinaryTree()    { destroySubTree(root); }
 
-   // Public interface for inserting, searching, and removing nodes.
-   void insertNode(int);
-   bool searchNode(int);
-   void remove(int);
+   // Public interface for inserting, searching and removing nodes.
+   void insertNode(const string &str);
+   bool searchNode(const string &str);
+   void remove(const string &str);
 
    // Public wrappers for tree traversal functions.
    void displayInOrder() const     {  displayInOrder(root); }
@@ -64,7 +64,7 @@ void IntBinaryTree::insert(TreeNode *&nodePtr, TreeNode *&newNode) {
 
 // insertNode creates a new node to hold num as its value,
 // and passes it to the insert function.                  
-void IntBinaryTree::insertNode(int num) {
+void IntBinaryTree::insertNode(const string &str num) {
    TreeNode *newNode;      // Pointer to a new node.
 
    // Create a new node and store num in it.
