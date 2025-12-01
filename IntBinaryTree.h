@@ -19,10 +19,10 @@ private:
    TreeNode *root;      
 
    // Private member functions for internal operations.
-   void insert(TreeNode *&nodePtr, TreeNode *newNode);
+   void insert(TreeNode *&nodePtr, TreeNode *&newNode);
    void destroySubTree(TreeNode *nodePtr);
    void deleteNode(const string &str, TreeNode *&nodePtr);
-   void makeDeletion(TreeNode *nodePtr);
+   void makeDeletion(TreeNode *&nodePtr);
    void displayInOrder(TreeNode *nodePtr) const;
    void displayPreOrder(TreeNode *nodePtr) const;
    void displayPostOrder(TreeNode *nodePtr) const;
