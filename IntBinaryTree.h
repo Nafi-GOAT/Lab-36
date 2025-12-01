@@ -49,7 +49,6 @@ public:
 #include "IntBinaryTree.h"
 #include <iostream>
 using namespace std;
-
 // insert accepts a TreeNode pointer and a pointer to a node.
 // The function inserts the node into the tree pointed to by 
 // the TreeNode pointer. This function is called recursively.
@@ -110,11 +109,13 @@ void IntBinaryTree::remove(const string &str) {
 
 // deleteNode deletes the node whose value 
 // member is the same as num.              
-void IntBinaryTree::deleteNode(int num, TreeNode *&nodePtr) {
-   if (num < nodePtr->value)
-      deleteNode(num, nodePtr->left);
-   else if (num > nodePtr->value)
-      deleteNode(num, nodePtr->right);
+void IntBinaryTree::deleteNode(const string &str, TreeNode *&nodePtr) {
+   if (!nodePtr)
+      return;
+   if (str < nodePtr->value)   
+      deleteNode(str, nodePtr->left);
+   else if (str > nodePtr->value)
+      deleteNode(str, nodePtr->right);
    else
       makeDeletion(nodePtr);
 }
@@ -132,8 +133,11 @@ void IntBinaryTree::makeDeletion(TreeNode *&nodePtr) {
       cout << "Cannot delete empty node.\n";
    else if (!nodePtr->right) {
       tempNodePtr = nodePtr;
+
+
       nodePtr = nodePtr->left;   // Reattach the left child
       delete tempNodePtr;
+
    } else if (!nodePtr->left) {
       tempNodePtr = nodePtr;
       nodePtr = nodePtr->right;  // Reattach the right child
