@@ -10,10 +10,21 @@ using namespace std;
 int main() {
          IntBinaryTree tree;
 
+         cout << "Testing for Milestone 3" << endl; 
+
     tree.insertNode("HELLO");
     tree.insertNode("WORLD");
     tree.insertNode("YAY");
-         cout << "Testing for Milestone 2" << endl;
+    tree.insertNode("COMSC");
+    tree.insertNode("210");
+    tree.insertNode("LAB");
+    tree.insertNode("TREE");
+    tree.insertNode("DATA");
+    tree.insertNode("STRUCTURE");
+    tree.insertNode("MILSTONE");
+
+
+        cout << "Displaying in Order: " << endl;
         tree.displayInOrder();
 
          return 0;
